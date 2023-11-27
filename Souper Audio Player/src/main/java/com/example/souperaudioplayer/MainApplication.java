@@ -6,13 +6,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
 public class MainApplication extends Application {
     static Stage stage;
     static Scene mainScene;
     static Scene audioPlayerScene;
     static Scene createPlaylistScene;
     static Scene playPlaylistScene;
+
 
     @Override
     public void start(Stage stage1) throws IOException {

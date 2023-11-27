@@ -80,7 +80,7 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button id="btnPlayOrPause" mnemonicParsing="false" text="| |">
+                  <Button id="btnPlayPause" fx:id="PlayPause" mnemonicParsing="false" onAction="#playAudio" text="| |">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
