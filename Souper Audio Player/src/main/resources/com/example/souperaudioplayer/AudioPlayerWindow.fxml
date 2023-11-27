@@ -11,18 +11,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.souperaudioplayer.AudioPlayerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="602.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.souperaudioplayer.AudioPlayerController">
    <children>
       <VBox alignment="CENTER" layoutX="10.0" prefHeight="406.0" prefWidth="582.0">
          <children>
-            <Label id="lblQueue" prefHeight="49.0" prefWidth="69.0" text="Queue">
+            <Label id="lblQueue" prefHeight="49.0" prefWidth="69.0" text="Queue" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="24.0" />
                </font>
             </Label>
             <HBox alignment="BOTTOM_CENTER" prefHeight="36.0" prefWidth="582.0" spacing="120.0">
                <children>
-                  <Label id="lblName" text="Name:">
+                  <Label id="lblName" text="Name:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="22.0" />
                      </font>
@@ -32,7 +32,7 @@
                         <Font name="Trebuchet MS" size="16.0" />
                      </font>
                   </Button>
-                  <Label id="lblLength" text="Length:">
+                  <Label id="lblLength" text="Length:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="22.0" />
                      </font>
@@ -41,23 +41,23 @@
             </HBox>
             <ScrollPane prefHeight="121.0" prefWidth="582.0">
               <content>
-                <AnchorPane id="spaneQueue" minHeight="0.0" minWidth="0.0" prefHeight="124.0" prefWidth="566.0" />
+                <AnchorPane id="spaneQueue" minHeight="0.0" minWidth="0.0" prefHeight="124.0" prefWidth="566.0" style="-fx-background-color: black;" />
               </content>
             </ScrollPane>
-            <Label id="lblNowPlaying" prefHeight="43.0" prefWidth="134.0" text="Now Playing:">
+            <Label id="lblNowPlaying" prefHeight="43.0" prefWidth="134.0" text="Now Playing:" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="23.0" />
                </font>
             </Label>
             <HBox alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="582.0">
                <children>
-                  <Label id="lblCurTime" text="00:00">
+                  <Label id="lblCurTime" text="00:00" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="19.0" />
                      </font>
                   </Label>
                   <Slider id="sliderScrubber" prefHeight="20.0" prefWidth="476.0" />
-                  <Label id="lblTotalTime" text="00:00">
+                  <Label id="lblTotalTime" text="00:00" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="19.0" />
                      </font>
@@ -85,7 +85,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="83.0" prefWidth="582.0">
                <children>
-                  <Label id="lblSound" prefHeight="39.0" prefWidth="55.0" text="Sound:">
+                  <Label id="lblSound" prefHeight="39.0" prefWidth="55.0" text="Sound:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="18.0" />
                      </font>
