@@ -13,25 +13,20 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="602.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.souperaudioplayer.AudioPlayerController">
    <children>
-      <VBox alignment="CENTER" layoutX="10.0" prefHeight="406.0" prefWidth="582.0">
+      <VBox id="vBoxMain" alignment="CENTER" layoutX="10.0" prefHeight="406.0" prefWidth="582.0">
          <children>
-            <Label id="lblQueue" prefHeight="49.0" prefWidth="69.0" text="Queue" textFill="WHITE">
+            <Label id="lblQueue" prefHeight="24.0" prefWidth="69.0" text="Queue" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="24.0" />
                </font>
             </Label>
-            <HBox alignment="BOTTOM_CENTER" prefHeight="36.0" prefWidth="582.0" spacing="120.0">
+            <HBox id="hBoxNameAndLength" alignment="BOTTOM_CENTER" prefHeight="18.0" prefWidth="582.0" spacing="400.0">
                <children>
                   <Label id="lblName" text="Name:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="22.0" />
                      </font>
                   </Label>
-                  <Button id="btnFileExplorer" fx:id="btnFileExplorer" mnemonicParsing="false" onAction="#openFile" text="Open File Explorer">
-                     <font>
-                        <Font name="Trebuchet MS" size="16.0" />
-                     </font>
-                  </Button>
                   <Label id="lblLength" text="Length:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="22.0" />
@@ -39,17 +34,31 @@
                   </Label>
                </children>
             </HBox>
-            <ScrollPane prefHeight="121.0" prefWidth="582.0">
+            <ScrollPane id="sPaneQueue" prefHeight="121.0" prefWidth="582.0">
               <content>
-                <AnchorPane id="spaneQueue" minHeight="0.0" minWidth="0.0" prefHeight="124.0" prefWidth="566.0" style="-fx-background-color: black;" />
+                <AnchorPane id="aPaneQueue" minHeight="0.0" minWidth="0.0" prefHeight="124.0" prefWidth="566.0" style="-fx-background-color: black;" />
               </content>
             </ScrollPane>
-            <Label id="lblNowPlaying" prefHeight="43.0" prefWidth="134.0" text="Now Playing:" textFill="WHITE">
+            <HBox id="hBoxFileStuff" alignment="TOP_CENTER" prefHeight="26.0" prefWidth="582.0" spacing="40.0">
+               <children>
+                  <Button id="btnFileExplorer" fx:id="FileExplorer" mnemonicParsing="false" onAction="#openFile" prefHeight="24.0" prefWidth="131.0" text="Open File Explorer">
+                     <font>
+                        <Font name="Trebuchet MS" size="13.0" />
+                     </font>
+                  </Button>
+                  <Label id="lblDragAndDrop" prefHeight="20.0" prefWidth="201.0" text="or drag and drop into box" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label id="lblNowPlaying" prefHeight="69.0" prefWidth="134.0" text="Now Playing:" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="23.0" />
                </font>
             </Label>
-            <HBox alignment="BOTTOM_CENTER" prefHeight="40.0" prefWidth="582.0">
+            <HBox id="hBoxScrubber" alignment="BOTTOM_CENTER" prefHeight="21.0" prefWidth="582.0">
                <children>
                   <Label id="lblCurTime" text="00:00" textFill="WHITE">
                      <font>
@@ -83,7 +92,7 @@
                   </Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="83.0" prefWidth="582.0">
+            <HBox id="hBoxExtraControls" alignment="CENTER" prefHeight="64.0" prefWidth="582.0">
                <children>
                   <Label id="lblSound" prefHeight="39.0" prefWidth="55.0" text="Sound:" textFill="WHITE">
                      <font>

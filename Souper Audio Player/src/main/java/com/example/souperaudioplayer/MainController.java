@@ -15,19 +15,19 @@ import java.util.ResourceBundle;
 
 public class MainController {
 
-    public void menuPlayAudio() throws IOException {
+    public void playAudio() throws IOException {
         MainApplication.change(1);
     }
-    public void menuCreatePlaylist(){
-        System.out.println("Create Playlist");
+    public void createPlaylist() throws IOException {
+        MainApplication.change(2);
     }
-    public void menuPlayPlaylist(){
-        System.out.println("Play Playlist");
+    public void playPlaylist() throws IOException {
+        MainApplication.change(3);
     }
-    public void menuHelp(){
+    public void help(){
         System.out.println("Help");
     }
-    public void menuQuit(){
-        System.out.println("Close App");
+    public void quit(){
+        MainApplication.closeApp();
     }
 }

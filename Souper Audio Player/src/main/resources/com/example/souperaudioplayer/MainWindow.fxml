@@ -16,29 +16,29 @@
                   <Font name="Trebuchet MS" size="48.0" />
                </font>
             </Label>
-            <Button id="btnPlayAudio" fx:id="MainWindow" mnemonicParsing="false" onAction="#menuPlayAudio" style="-fx-background-color: #282828;" text="Play Audio" textFill="WHITE">
+            <Button id="btnPlayAudio" fx:id="MainWindow" mnemonicParsing="false" onAction="#playAudio" style="-fx-background-color: #282828;" text="Play Audio" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="33.0" />
                </font>
             </Button>
-            <Button id="btnCreatePlayList" fx:id="btnCreatePlaylist" mnemonicParsing="false" onAction="#menuCreatePlaylist" style="-fx-background-color: #282828;" text="Create Playlist" textFill="WHITE">
+            <Button id="btnCreatePlayList" fx:id="btnCreatePlaylist" mnemonicParsing="false" onAction="#createPlaylist" style="-fx-background-color: #282828;" text="Create Playlist" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="33.0" />
                </font>
             </Button>
-            <Button id="btnPlayPlaylist" fx:id="btnPlayPlaylist" mnemonicParsing="false" onAction="#menuPlayPlaylist" style="-fx-background-color: #282828;" text="Play Playlist" textFill="WHITE">
+            <Button id="btnPlayPlaylist" fx:id="btnPlayPlaylist" mnemonicParsing="false" onAction="#playPlaylist" style="-fx-background-color: #282828;" text="Play Playlist" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="33.0" />
                </font>
             </Button>
             <HBox id="hBoxBottom" alignment="CENTER" prefHeight="31.0" prefWidth="600.0" spacing="30.0">
                <children>
-                  <Button id="btnHelp" fx:id="btnHelp" mnemonicParsing="false" onAction="#menuHelp" style="-fx-background-color: #282828;" text="Help" textFill="WHITE">
+                  <Button id="btnHelp" fx:id="btnHelp" mnemonicParsing="false" onAction="#help" style="-fx-background-color: #282828;" text="Help" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="18.0" />
                      </font>
                   </Button>
-                  <Button id="btnQuit" fx:id="btnQuit" mnemonicParsing="false" onAction="#menuQuit" style="-fx-background-color: #282828;" text="Quit" textFill="WHITE">
+                  <Button id="btnQuit" fx:id="btnQuit" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: #282828;" text="Quit" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="18.0" />
                      </font>
