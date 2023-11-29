@@ -60,13 +60,13 @@
             </Label>
             <HBox id="hBoxScrubber" alignment="BOTTOM_CENTER" prefHeight="21.0" prefWidth="582.0">
                <children>
-                  <Label id="lblCurTime" text="00:00" textFill="WHITE">
+                  <Label id="lblCurTime" fx:id="lblCurrentTime" text="00:00" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="19.0" />
                      </font>
                   </Label>
-                  <Slider id="sliderScrubber" prefHeight="20.0" prefWidth="476.0" />
-                  <Label id="lblTotalTime" text="00:00" textFill="WHITE">
+                  <Slider id="sliderScrubber" fx:id="sliderScrubber" majorTickUnit="1.0" prefHeight="20.0" prefWidth="476.0" />
+                  <Label id="lblTotalTime" fx:id="lblLength" text="00:00" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="19.0" />
                      </font>
@@ -75,7 +75,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="38.0" prefWidth="582.0">
                <children>
-                  <Button id="btnLastAudio" mnemonicParsing="false" text="&lt;&lt;">
+                  <Button id="btnLastAudio" fx:id="backAudio" mnemonicParsing="false" onAction="#backAudio" text="&lt;&lt;">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -85,7 +85,7 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button id="btnNextAudio" mnemonicParsing="false" text="&gt;&gt;">
+                  <Button id="btnNextAudio" fx:id="skipAudio" mnemonicParsing="false" onAction="#skipAudio" text="&gt;&gt;">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -96,24 +96,29 @@
                <children>
                   <Label id="lblSound" prefHeight="39.0" prefWidth="55.0" text="Sound:" textFill="WHITE">
                      <font>
-                        <Font name="Trebuchet MS" size="18.0" />
+                        <Font name="Trebuchet MS" size="15.0" />
                      </font>
                   </Label>
-                  <Slider id="sliderVolume" prefHeight="42.0" prefWidth="158.0" value="50.0" />
-                  <ChoiceBox id="cboxSpeed" prefHeight="38.0" prefWidth="76.0" />
+                  <Slider id="sliderVolume" fx:id="volumeSlider" majorTickUnit="0.1" max="1.0" minorTickCount="1" prefHeight="42.0" prefWidth="140.0" showTickMarks="true" snapToTicks="true" value="1.0" />
+                  <Label id="lblSound" prefHeight="39.0" prefWidth="55.0" text=" speed:" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS" size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox id="cboxSpeed" fx:id="speedBox" prefHeight="30.0" prefWidth="76.0" />
                   <ToggleButton id="tbtnLoop" mnemonicParsing="false" text="Loop">
                      <font>
-                        <Font name="Trebuchet MS" size="20.0" />
+                        <Font name="Trebuchet MS" size="16.0" />
                      </font>
                   </ToggleButton>
                   <ToggleButton id="tbtnRandom" mnemonicParsing="false" text="Random">
                      <font>
-                        <Font name="Trebuchet MS" size="20.0" />
+                        <Font name="Trebuchet MS" size="16.0" />
                      </font>
                   </ToggleButton>
                   <ToggleButton id="btnOnTop" mnemonicParsing="false" text="On Top">
                      <font>
-                        <Font name="Trebuchet MS" size="20.0" />
+                        <Font name="Trebuchet MS" size="16.0" />
                      </font>
                   </ToggleButton>
                </children>
