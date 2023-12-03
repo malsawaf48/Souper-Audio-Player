@@ -2,14 +2,22 @@ package com.example.souperaudioplayer;
 
 import javafx.scene.media.Media;
 
+import java.io.File;
 import java.nio.file.Path;
 
 public class Audio {
     private String name;
     private Media audio;
+    private String path;
 
-    public Audio(String name, Media audio){
+    public Audio(String name, String path){
         this.name = name;
-        this.audio = audio;
+        this.path = path;
+        audio = new Media(new File(path).toURI().toString());
+    }
+    public String getName(){return name;}
+
+    public Media getAudio() {
+        return audio;
     }
 }

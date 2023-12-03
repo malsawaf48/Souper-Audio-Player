@@ -11,4 +11,7 @@ public class Playlist {
         this.audios = audios;
     }
 
+    public ArrayList<Audio> getAudios() {
+        return audios;
+    }
 }
