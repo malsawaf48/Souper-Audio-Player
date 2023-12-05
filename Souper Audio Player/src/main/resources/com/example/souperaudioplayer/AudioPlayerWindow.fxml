@@ -16,41 +16,36 @@
    <children>
       <VBox id="vBoxMain" alignment="CENTER" layoutX="10.0" prefHeight="406.0" prefWidth="582.0">
          <children>
-            <Label id="lblQueue" prefHeight="24.0" prefWidth="69.0" text="Queue" textFill="WHITE">
+            <Label id="lblQueue" fx:id="lblQueue" prefHeight="24.0" prefWidth="69.0" text="Queue" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="24.0" />
                </font>
             </Label>
-            <HBox id="hBoxNameAndLength" alignment="BOTTOM_CENTER" prefHeight="18.0" prefWidth="582.0" spacing="400.0">
+            <HBox id="hBoxNameAndLength" alignment="BOTTOM_LEFT" prefHeight="18.0" prefWidth="582.0" spacing="400.0">
                <children>
-                  <Label id="lblName" text="Name:" textFill="WHITE">
-                     <font>
-                        <Font name="Trebuchet MS" size="22.0" />
-                     </font>
-                  </Label>
-                  <Label id="lblLength" text="Length:" textFill="WHITE">
+                  <Label id="lblName" fx:id="lblName" text="Name:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="22.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <ListView fx:id="queueList" prefHeight="153.0" prefWidth="540.0" style="-fx-background-color: gray;" />
+            <ListView fx:id="lstvQueue" prefHeight="153.0" prefWidth="540.0" style="-fx-background-color: gray;" />
             <HBox id="hBoxFileStuff" alignment="TOP_CENTER" prefHeight="26.0" prefWidth="582.0" spacing="40.0">
                <children>
-                  <Button id="btnFileExplorer" fx:id="FileExplorer" mnemonicParsing="false" onAction="#openFile" prefHeight="24.0" prefWidth="131.0" text="Open File Explorer">
+                  <Button id="btnFileExplorer" fx:id="btnFileExplorer" mnemonicParsing="false" onAction="#fileExplorer" prefHeight="24.0" prefWidth="131.0" text="Open File Explorer">
                      <font>
                         <Font name="Trebuchet MS" size="13.0" />
                      </font>
                   </Button>
-                  <Label id="lblDragAndDrop" prefHeight="20.0" prefWidth="201.0" text="or drag and drop into box" textFill="WHITE">
+                  <Label id="lblDragAndDrop" fx:id="lblDragAndDrop" prefHeight="20.0" prefWidth="201.0" text="or drag and drop into box" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="17.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <Label id="lblNowPlaying" prefHeight="69.0" prefWidth="134.0" text="Now Playing:" textFill="WHITE">
+            <Label id="lblNowPlaying" fx:id="lblNowPlaying" alignment="CENTER" prefHeight="58.0" prefWidth="550.0" text="Playing:" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="23.0" />
                </font>
@@ -75,17 +70,17 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="38.0" prefWidth="582.0">
                <children>
-                  <Button id="btnLastAudio" fx:id="backAudio" mnemonicParsing="false" onAction="#backAudio" text="&lt;&lt;">
+                  <Button id="btnLastAudio" fx:id="btnBackAudio" mnemonicParsing="false" onAction="#backAudio" text="&lt;&lt;">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button id="btnPlayPause" fx:id="PlayPause" mnemonicParsing="false" onAction="#playAudio" text="| |">
+                  <Button id="btnPlayPause" fx:id="btnPlayPause" mnemonicParsing="false" onAction="#playPause" text="| |">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button id="btnNextAudio" fx:id="skipAudio" mnemonicParsing="false" onAction="#skipAudio" text="&gt;&gt;">
+                  <Button id="btnNextAudio" fx:id="btnSkipAudio" mnemonicParsing="false" onAction="#skipAudio" text="&gt;&gt;">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -94,29 +89,29 @@
             </HBox>
             <HBox id="hBoxExtraControls" alignment="CENTER" prefHeight="64.0" prefWidth="582.0">
                <children>
-                  <Label id="lblSound" prefHeight="39.0" prefWidth="55.0" text="Sound:" textFill="WHITE">
+                  <Label id="lblSound" fx:id="lblSound" prefHeight="39.0" prefWidth="55.0" text="Sound:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="15.0" />
                      </font>
                   </Label>
-                  <Slider id="sliderVolume" fx:id="volumeSlider" majorTickUnit="0.1" max="1.0" minorTickCount="1" prefHeight="42.0" prefWidth="140.0" showTickMarks="true" snapToTicks="true" value="1.0" />
-                  <Label id="lblSound" prefHeight="39.0" prefWidth="55.0" text=" speed:" textFill="WHITE">
+                  <Slider id="sliderVolume" fx:id="sliderVolume" majorTickUnit="0.1" max="1.0" minorTickCount="1" prefHeight="42.0" prefWidth="140.0" showTickMarks="true" snapToTicks="true" value="1.0" />
+                  <Label id="lblSound" fx:id="lblSpeed" prefHeight="39.0" prefWidth="55.0" text=" speed:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="15.0" />
                      </font>
                   </Label>
-                  <ChoiceBox id="cboxSpeed" fx:id="speedBox" prefHeight="30.0" prefWidth="76.0" />
-                  <ToggleButton id="tbtnLoop" mnemonicParsing="false" text="Loop">
+                  <ChoiceBox id="cboxSpeed" fx:id="cboxSpeedBox" prefHeight="30.0" prefWidth="76.0" />
+                  <ToggleButton id="tbtnLoop" fx:id="btntLoop" mnemonicParsing="false" onAction="#loopMode" text="Loop">
                      <font>
                         <Font name="Trebuchet MS" size="16.0" />
                      </font>
                   </ToggleButton>
-                  <ToggleButton id="tbtnRandom" mnemonicParsing="false" text="Random">
+                  <ToggleButton id="tbtnRandom" fx:id="btntRandom" mnemonicParsing="false" text="Random">
                      <font>
                         <Font name="Trebuchet MS" size="16.0" />
                      </font>
                   </ToggleButton>
-                  <ToggleButton id="btnOnTop" mnemonicParsing="false" text="On Top">
+                  <ToggleButton id="btnOnTop" fx:id="btntOnTop" mnemonicParsing="false" text="On Top">
                      <font>
                         <Font name="Trebuchet MS" size="16.0" />
                      </font>

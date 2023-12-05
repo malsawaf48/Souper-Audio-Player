@@ -1,0 +1,6 @@
+The only this that kind of works right now is the first option "Play Audio".
+The program stil doesnt load files from the user its only working by loading files manually through code.
+Playing an individual song works with seeking with the slider, volume, playback speed.
+If you press "open file explorer" it will load 3 different audios but switching between them breaks the slider for scrubbing through. You can still switch songs and they will still play.
+
+A lot of the stuff is temporary but i want to get the core audio player screen working before i finish adding other things.
