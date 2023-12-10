@@ -6,9 +6,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -23,7 +23,7 @@
             </Label>
             <HBox id="hBoxNameAndLength" alignment="BOTTOM_LEFT" prefHeight="18.0" prefWidth="582.0" spacing="400.0">
                <children>
-                  <Label id="lblName" fx:id="lblName" text="Name:" textFill="WHITE">
+                  <Label id="lblName" fx:id="lblName" text=" Name:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="22.0" />
                      </font>
@@ -33,12 +33,7 @@
             <ListView fx:id="lstvQueue" prefHeight="153.0" prefWidth="540.0" style="-fx-background-color: gray;" />
             <HBox id="hBoxFileStuff" alignment="TOP_CENTER" prefHeight="26.0" prefWidth="582.0" spacing="40.0">
                <children>
-                  <Button id="btnFileExplorer" fx:id="btnFileExplorer" mnemonicParsing="false" onAction="#fileExplorer" prefHeight="24.0" prefWidth="131.0" text="Open File Explorer">
-                     <font>
-                        <Font name="Trebuchet MS" size="13.0" />
-                     </font>
-                  </Button>
-                  <Label id="lblDragAndDrop" fx:id="lblDragAndDrop" prefHeight="20.0" prefWidth="201.0" text="or drag and drop into box" textFill="WHITE">
+                  <Label id="lblDragAndDrop" fx:id="lblDragAndDrop" prefHeight="20.0" prefWidth="267.0" text="drag and drop audio files into box" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="17.0" />
                      </font>
@@ -75,7 +70,7 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button id="btnPlayPause" fx:id="btnPlayPause" mnemonicParsing="false" onAction="#playPause" text="| |">
+                  <Button id="btnPlayPause" fx:id="btnPlayPause" mnemonicParsing="false" onAction="#playPause" text=" &gt; ">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
@@ -95,27 +90,13 @@
                      </font>
                   </Label>
                   <Slider id="sliderVolume" fx:id="sliderVolume" majorTickUnit="0.1" max="1.0" minorTickCount="1" prefHeight="42.0" prefWidth="140.0" showTickMarks="true" snapToTicks="true" value="1.0" />
+                  <Pane prefHeight="62.0" prefWidth="237.0" />
                   <Label id="lblSound" fx:id="lblSpeed" prefHeight="39.0" prefWidth="55.0" text=" speed:" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="15.0" />
                      </font>
                   </Label>
                   <ChoiceBox id="cboxSpeed" fx:id="cboxSpeedBox" prefHeight="30.0" prefWidth="76.0" />
-                  <ToggleButton id="tbtnLoop" fx:id="btntLoop" mnemonicParsing="false" onAction="#loopMode" text="Loop">
-                     <font>
-                        <Font name="Trebuchet MS" size="16.0" />
-                     </font>
-                  </ToggleButton>
-                  <ToggleButton id="tbtnRandom" fx:id="btntRandom" mnemonicParsing="false" text="Random">
-                     <font>
-                        <Font name="Trebuchet MS" size="16.0" />
-                     </font>
-                  </ToggleButton>
-                  <ToggleButton id="btnOnTop" fx:id="btntOnTop" mnemonicParsing="false" text="On Top">
-                     <font>
-                        <Font name="Trebuchet MS" size="16.0" />
-                     </font>
-                  </ToggleButton>
                </children>
             </HBox>
          </children>
