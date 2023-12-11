@@ -20,4 +20,8 @@ public class Audio {
     public Media getAudio() {
         return audio;
     }
+
+    public String getPath() {
+        return path;
+    }
 }

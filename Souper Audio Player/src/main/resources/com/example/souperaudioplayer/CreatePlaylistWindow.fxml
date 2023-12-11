@@ -2,7 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.souperaudioplayer.CreatePlaylistController">
    <children>
-      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" spacing="6.0">
+      <VBox alignment="TOP_CENTER" layoutX="14.0" prefHeight="400.0" prefWidth="572.0" spacing="6.0">
          <children>
             <Label text="Create Playlist" textFill="WHITE">
                <font>
@@ -25,50 +25,23 @@
                         <Font name="Trebuchet MS" size="23.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="25.0" prefWidth="432.0" promptText="Playlist Name">
+                  <TextField fx:id="txtfPlaylistName" prefHeight="26.0" prefWidth="414.0" promptText="Playlist Name">
                      <font>
                         <Font name="Trebuchet MS" size="14.0" />
                      </font>
                   </TextField>
                </children>
             </HBox>
-            <HBox alignment="BOTTOM_CENTER" prefHeight="37.0" prefWidth="600.0">
-               <children>
-                  <Label text="Folder Path:" textFill="WHITE">
-                     <font>
-                        <Font name="Trebuchet MS" size="23.0" />
-                     </font>
-                  </Label>
-                  <TextField prefHeight="26.0" prefWidth="380.0" promptText="Path">
-                     <font>
-                        <Font name="Trebuchet MS" size="14.0" />
-                     </font>
-                  </TextField>
-                  <Button id="openFolder" fx:id="openFolder" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Open Folder">
-                     <font>
-                        <Font name="Trebuchet MS" size="12.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-            <Label text="OR" textFill="WHITE">
+            <HBox alignment="BOTTOM_CENTER" prefHeight="37.0" prefWidth="600.0" />
+            <Label text="Drag and Drop Files in Box Below" textFill="WHITE">
                <font>
                   <Font name="Trebuchet MS" size="19.0" />
                </font>
             </Label>
-            <Label text="Drag and Drop Below" textFill="WHITE">
-               <font>
-                  <Font name="Trebuchet MS" size="19.0" />
-               </font>
-            </Label>
-            <ScrollPane prefHeight="139.0" prefWidth="600.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="138.0" prefWidth="584.0" style="-fx-background-color: black;" />
-              </content>
-            </ScrollPane>
-            <HBox alignment="BOTTOM_CENTER" prefHeight="66.0" prefWidth="600.0" spacing="40.0">
+            <ListView fx:id="lstvFilesList" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;" />
+            <HBox alignment="CENTER" prefHeight="63.0" prefWidth="572.0" spacing="40.0">
                <children>
-                  <Button mnemonicParsing="false" prefWidth="151.0" text="Create Playlist">
+                  <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#create" prefWidth="151.0" text="Create Playlist">
                      <font>
                         <Font name="Trebuchet MS" size="19.0" />
                      </font>
