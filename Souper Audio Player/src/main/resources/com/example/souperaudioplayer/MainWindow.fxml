@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="MainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.souperaudioplayer.MainController">
+<AnchorPane id="MainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.souperaudioplayer.MainController">
    <children>
       <VBox id="vBoxMain" alignment="CENTER" layoutX="-2.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0">
          <children>
@@ -33,11 +33,6 @@
             </Button>
             <HBox id="hBoxBottom" alignment="CENTER" prefHeight="31.0" prefWidth="600.0" spacing="30.0">
                <children>
-                  <Button id="btnHelp" fx:id="btnHelp" mnemonicParsing="false" onAction="#help" style="-fx-background-color: #282828;" text="Help" textFill="WHITE">
-                     <font>
-                        <Font name="Trebuchet MS" size="18.0" />
-                     </font>
-                  </Button>
                   <Button id="btnQuit" fx:id="btnQuit" mnemonicParsing="false" onAction="#quit" style="-fx-background-color: #282828;" text="Quit" textFill="WHITE">
                      <font>
                         <Font name="Trebuchet MS" size="18.0" />

@@ -3,8 +3,13 @@ package com.example.souperaudioplayer;
 import javafx.event.Event;
 import javafx.fxml.Initializable;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.*;
@@ -29,6 +34,14 @@ public class AudioPlayerController implements Initializable {
     boolean isPlaying = false;
     int queueNum;
     ArrayList<Audio> draggedAudios = new ArrayList<>();
+    //Menu Start
+
+    static boolean boolStartFromMenu = false;
+    static int menuIndex;
+    ArrayList<Playlist> playlistsMenu = new ArrayList<>();
+    ArrayList<Audio> audioArrayMenu = new ArrayList<>();
+    ArrayList<String> playlistsNamesMenu = new ArrayList<String>();
+    ArrayList<String> audioNamesMenu = new ArrayList<>();
 
 
     @Override
@@ -73,6 +86,36 @@ public class AudioPlayerController implements Initializable {
 
             event.consume();
         });
+    }
+    private void startFromMenu() {
+        File playlistsFolder = new File("playlists");
+        String[] paths = playlistsFolder.list();
+        System.out.println();
+        playlistsNamesMenu.clear();
+        playlistsNamesMenu.addAll(List.of(paths));
+        for(int x=0;x <= menuIndex;x++){
+            System.out.println(x);
+            String oneName = playlistsNamesMenu.get(x);
+            audioArrayMenu.clear();
+            audioNamesMenu.clear();
+            try (BufferedReader br = new BufferedReader(new FileReader(new File("playlists\\"+oneName)))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] info = line.split(",");
+                    Audio audio = new Audio(info[0], info[1]);
+                    audioNamesMenu.add(info[0]);
+                    audioArrayMenu.add(audio);
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            Playlist playlist = new Playlist(oneName, audioArrayMenu);
+            playlistsMenu.add(playlist);
+        }
+        queue = playlistsMenu.get(menuIndex);
+        lstvQueue.getItems().addAll(audioNamesMenu);
+        start();
+        boolStartFromMenu = false;
     }
     public void start() {
         audioPlayer = new MediaPlayer(queue.getAudios().get(0).getAudio());
@@ -139,6 +182,9 @@ public class AudioPlayerController implements Initializable {
     }
 
     public void playPause() {
+        if(boolStartFromMenu){
+            startFromMenu();
+        }
         if (isPlaying) {
             pause();
         } else {

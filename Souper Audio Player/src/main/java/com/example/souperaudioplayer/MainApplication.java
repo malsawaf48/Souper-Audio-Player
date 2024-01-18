@@ -3,9 +3,12 @@ package com.example.souperaudioplayer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
+
 public class MainApplication extends Application {
     static Stage stage;
     static Scene mainScene;
@@ -31,6 +34,11 @@ public class MainApplication extends Application {
         playPlaylistScene = new Scene(fxmlPlayPlaylist.load());
 
         stage = stage1;
+        stage.setMinHeight(435);
+        stage.setMinWidth(613);
+        stage.setMaxHeight(435);
+        stage.setMaxWidth(613);
+        stage.getIcons().add(new Image(Objects.requireNonNull(MainApplication.class.getResourceAsStream("Icon.png"))));
         MainApplication.stage.setTitle("Souper Audio Player");
         change(0);
     }

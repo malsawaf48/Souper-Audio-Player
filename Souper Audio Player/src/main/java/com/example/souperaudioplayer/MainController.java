@@ -24,9 +24,6 @@ public class MainController {
     public void playPlaylist() throws IOException {
         MainApplication.change(3);
     }
-    public void help(){
-        System.out.println("Help");
-    }
     public void quit(){
         MainApplication.closeApp();
     }

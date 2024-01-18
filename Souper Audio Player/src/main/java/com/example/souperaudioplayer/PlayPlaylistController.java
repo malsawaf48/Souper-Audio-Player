@@ -43,6 +43,7 @@ public class PlayPlaylistController implements Initializable {
         lstvPlaylistList.getItems().addAll(playlistsNames);
         for(String oneName: playlistsNames){
             audioArray.clear();
+            audioNames.clear();
             try (BufferedReader br = new BufferedReader(new FileReader(new File("playlists\\"+oneName)))) {
                 String line;
                 while ((line = br.readLine()) != null) {
@@ -61,9 +62,9 @@ public class PlayPlaylistController implements Initializable {
 
     }
     public void play() throws IOException {
-        for(Audio oneaudio: audioArray){
-            System.out.println(oneaudio.getName());
-        }
+        AudioPlayerController.boolStartFromMenu = true;
+        AudioPlayerController.menuIndex = selectedIndex;
+        System.out.println(selectedIndex);
         MainApplication.change(1);
     }
     public void quit() throws IOException {

@@ -73,7 +73,7 @@ public class CreatePlaylistController implements Initializable {
         MainApplication.change(0);
     }
     public void create(){
-        if(!Objects.equals(txtfPlaylistName.getText(), "")){
+        if(!Objects.equals(txtfPlaylistName.getText().toString().replaceAll("\\s+",""), "")){
             name = txtfPlaylistName.getText();
             try {
                 File myObj = new File("playlists\\"+name+".txt");
@@ -99,6 +99,8 @@ public class CreatePlaylistController implements Initializable {
             for(Audio oneaudio: audioArray){
 
             }
+            txtfPlaylistName.clear();
+            lstvFilesList.getItems().clear();
         }
     }
 }
